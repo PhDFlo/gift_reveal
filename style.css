@@ -264,3 +264,45 @@ input[type="text"] {
     pointer-events: none;
 }
 #notification-area.show { opacity: 1; }
+
+/* MEDIA QUERIES FOR MOBILE */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 1rem 0.5rem;
+    }
+
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.2rem; }
+
+    /* Fix Input Groups (Charade / Trivia) */
+    .input-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    input[type="text"] {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+    .btn {
+        width: 100%;
+    }
+
+    /* Fix Keyboard (Sutom / Hangman) */
+    .key {
+        padding: 8px 4px; /* Smaller padding */
+        min-width: 15px;
+        font-size: 0.9rem;
+    }
+    .key-row {
+        gap: 2px;
+    }
+
+    /* Fix Sutom Grid */
+    .sutom-cell {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+    }
+}
