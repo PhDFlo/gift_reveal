@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 :root {
     --primary-gold: #D4AF37;
     --secondary-gold: #AA8C2C;
@@ -19,6 +23,7 @@ body {
     justify-content: center;
     min-height: 100vh;
     overflow-x: hidden;
+    width: 100%;
 }
 
 /* Background Animation */
@@ -156,21 +161,34 @@ input[type="text"] {
 .keyboard {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 8px;
     margin-top: 20px;
     align-items: center;
+    width: 100%;
+    padding: 0 5px;
 }
-.key-row { display: flex; gap: 4px; }
+.key-row { 
+    display: flex; 
+    gap: 4px; 
+    width: 100%;
+    justify-content: center;
+}
 .key {
     background: #475569;
     color: white;
-    padding: 8px 10px;
+    padding: 12px 0; /* Vertical padding only, let width be flex */
     border-radius: 4px;
     font-weight: bold;
     cursor: pointer;
-    min-width: 20px;
+    flex: 1; /* Distribute available space */
+    max-width: 45px; /* Don't get too big on desktop */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-transform: uppercase;
     user-select: none;
+    font-size: 1rem;
+    touch-action: manipulation; /* Improve touch response */
 }
 .key:hover { background: #64748b; }
 .key.correct { background: var(--correct); }
@@ -291,9 +309,9 @@ input[type="text"] {
 
     /* Fix Keyboard (Sutom / Hangman) */
     .key {
-        padding: 8px 4px; /* Smaller padding */
-        min-width: 15px;
+        padding: 10px 0;
         font-size: 0.9rem;
+        max-width: none; /* Let them shrink/grow freely */
     }
     .key-row {
         gap: 2px;
@@ -301,8 +319,10 @@ input[type="text"] {
 
     /* Fix Sutom Grid */
     .sutom-cell {
-        width: 35px;
-        height: 35px;
+        width: 13vw; /* Responsive width mostly */
+        height: 13vw;
+        max-width: 40px;
+        max-height: 40px;
         font-size: 1.2rem;
     }
 }
