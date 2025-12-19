@@ -416,14 +416,14 @@ function createKeyboard(containerId, handler) {
         // Add Enter/Del on last row for Sutom
         if (rows.indexOf(rowStr) === 2 && containerId === 'keyboard') {
              const delBtn = document.createElement('div');
-             delBtn.className = 'key';
-             delBtn.innerText = 'DEL';
+             delBtn.className = 'key wide';
+             delBtn.innerText = '⌫';
              delBtn.onclick = () => handler('DEL');
              rowDiv.appendChild(delBtn);
 
              const entBtn = document.createElement('div');
-             entBtn.className = 'key';
-             entBtn.innerText = 'ENTER';
+             entBtn.className = 'key wide';
+             entBtn.innerText = '↵';
              entBtn.onclick = () => handler('ENTER');
              rowDiv.appendChild(entBtn);
         }

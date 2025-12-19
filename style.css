@@ -190,6 +190,11 @@ input[type="text"] {
     font-size: 1rem;
     touch-action: manipulation; /* Improve touch response */
 }
+.key.wide {
+    flex: 1.5; /* Take up more space */
+    font-size: 0.8rem; /* Smaller text for long words like ENTER */
+    max-width: 70px;
+}
 .key:hover { background: #64748b; }
 .key.correct { background: var(--correct); }
 .key.present { background: var(--present); }
@@ -312,6 +317,11 @@ input[type="text"] {
         padding: 10px 0;
         font-size: 0.9rem;
         max-width: none; /* Let them shrink/grow freely */
+    }
+    .key.wide {
+        flex: 1.5;
+        font-size: 3.0rem; /* Bigger icons as requested */
+        padding: 5px 0; /* Slight padding adj */
     }
     .key-row {
         gap: 2px;
